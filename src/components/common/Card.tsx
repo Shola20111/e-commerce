@@ -40,11 +40,11 @@ export default function Card() {
   return (
     <section>
       {/* Right Side */}
-      <div className="relative flex flex-col items-center justify-center w-full h-[344px]">
+      <div className="relative flex flex-col items-center justify-center w-full h-[250px] md:h-[344px]">
         {cards.map((card, index) => (
           <div
             key={card.id}
-            className={`absolute inset-0 flex flex-col items-center justify-center text-white transition-opacity duration-700 rounded-xl w-full ${
+            className={`absolute inset-0 flex flex-col items-center justify-center text-white transition-opacity duration-700 w-full h-[250px] md:h-[344px] ${
               index === activeIndex ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
           >
@@ -53,7 +53,7 @@ export default function Card() {
               src={card.image}
               alt={card.title}
               fill
-              className=" w-full h-[344px] -z-10"
+              className=" w-full h-full -z-10"
             />
 
             {/* Overlay for better text readability */}
