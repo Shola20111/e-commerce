@@ -1,11 +1,15 @@
-import HeroComp from '@/components/modules/HeroComp';
+
 import * as React from 'react';
+import HeroComp from '@/components/modules/HeroComp';
+import DailyMarket from '@/components/modules/DailyMarket';
 
 
 export default function Home() {
   return (
-    <div className='px-[135px] w-full'>
+    <div className='px-[135px] w-full h-auto flex flex-col gap-[100px]'>
       <HeroComp/>
+      <DailyMarket/>
+      
     </div>
   )
 }
