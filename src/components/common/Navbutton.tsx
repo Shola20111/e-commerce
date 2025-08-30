@@ -5,9 +5,9 @@ type NavbuttonProp = {
 }
 const Navbutton = ({text}:NavbuttonProp) => {
   return (
-    <button>
+    <div>
       {text}
-    </button>
+    </div>
   )
 }
 
