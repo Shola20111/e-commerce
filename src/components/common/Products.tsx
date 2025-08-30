@@ -130,7 +130,7 @@ const Products = () => {
           
         </section>
       ))}
-      <div className='w-[90px] h-[46px] flex justify-between items-center absolute right-[5px] top-[-60px]  '>
+      <div className='w-[90px] h-[46px] flex justify-between items-center absolute right-[5px] top-[-80px] md:top-[-60px]  '>
         <button 
         type="button"
         onClick={() => prev()}
