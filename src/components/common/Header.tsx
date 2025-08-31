@@ -76,11 +76,11 @@ const Header = () => {
   ];
 
   return (
-    <div className="px-4 md:px-[135px] w-full h-[60px] mt-[20px] md:mt-[40px] pb-[10px] md:pb-[15px] border border-[#e4e0e0] mx-auto flex justify-between items-center">
+    <div className="px-[10px] md:px-[50px] lg:px-[135px] w-full h-[60px] mt-[20px] md:mt-[40px] pb-[10px] md:pb-[15px] border border-[#e4e0e0] mx-auto flex justify-between items-center">
       {/* Left Section */}
       <div className="flex items-center justify-between w-full md:w-[700px] h-full">
         {/* Logo */}
-        <div className="flex items-center w-[150px] md:w-[220px] h-full">
+        <div className="flex items-center w-[220px] md:w-[150px] h-full">
           <Image src="/logo.png" width={200} height={20} alt="Logo" />
         </div>
 
