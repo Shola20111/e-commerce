@@ -85,7 +85,7 @@ const Header = () => {
         </div>
 
         {/* Links (desktop only) */}
-        <div className="hidden md:flex  w-full h-full justify-center items-center gap-[40px] text-[18px] md:text-lg">
+        <div className="hidden lg:flex  w-full h-full justify-center items-center gap-[40px] text-[18px] md:text-lg">
           {links.map((link) => (
             <Link
               key={link.href}
