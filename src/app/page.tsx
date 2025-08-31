@@ -6,7 +6,7 @@ import DailyMarket from '@/components/modules/DailyMarket';
 
 export default function Home() {
   return (
-    <div className='px-[135px] w-full h-auto flex flex-col gap-[100px]'>
+    <div className='px-[10px] md:px-[50px] lg:px-[135px] w-full h-auto flex flex-col gap-[100px]'>
       <HeroComp/>
       <DailyMarket/>
       

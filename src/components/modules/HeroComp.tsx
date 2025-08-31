@@ -4,8 +4,8 @@ import Card from '@/components/common/Card'
 
 const HeroComp = () => {
   return (
-    <div className='gap-[40px] grid grid-cols-[225px_1fr] h-[385px]'>
-      <div className='flex flex-col gap-4 pt-10 pr-[13px] border-r border-[#e4e0e0] text-[#000000] b bo'>
+    <div className='gap-[20px] md:gap-[40px] flex flex-col md:grid grid-cols-[225px_1fr] h-auto'>
+      <div className='flex flex-col gap-4 pt-10 pr-[13px] w-[225px] mx-auto md:mx-0 border-r border-[#e4e0e0] text-[#000000] b bo'>
         <div className='flex justify-between pr-2'>
             <p className='font-normal text-[16px] leading-[24px]'>Woman’s Fashion</p>
             <VscChevronRight className='w-[15] h-[15px]'/>
