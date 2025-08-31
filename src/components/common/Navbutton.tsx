@@ -5,7 +5,7 @@ type NavbuttonProp = {
 }
 const Navbutton = ({text}:NavbuttonProp) => {
   return (
-    <div>
+    <div className='text-[15px] lg:text-[20px] '>
       {text}
     </div>
   )
