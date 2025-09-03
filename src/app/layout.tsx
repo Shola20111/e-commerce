@@ -5,6 +5,7 @@ import "./globals.css";
 import TopHeader from "@/components/common/TopHeader";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
+import { ScrollProvider } from "@/context/ScrollProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -31,18 +32,20 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-        />
+      
       </head>
       <body
         className={`${poppins.variable}  antialiased w-[100%] h-auto mx-auto`}
       >
-        <TopHeader/>
-        <Header/>
-        {children}
-        <Footer/>
+        <ScrollProvider>
+          <TopHeader/>
+          <Header/>
+          {children}
+          <Footer/>
+        </ScrollProvider>
+        
+       
+        
       </body>
     </html>
   );
