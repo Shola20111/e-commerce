@@ -7,7 +7,7 @@ const TopHeader = () => {
   const [lang, setLang] = useState('Englsh')
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Close when clicking outside
+ 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -22,8 +22,8 @@ const TopHeader = () => {
   }, []);
 
   const handleMenuClick = (menu: string) => {
-    setLang(menu); //open select language
-    setOpen(false); // close after click
+    setLang(menu); 
+    setOpen(false); 
   };
 
 	

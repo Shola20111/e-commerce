@@ -2,11 +2,10 @@
 
 "use client";
 import Image from "next/image";
-import React, { useRef } from "react";
 import { CiHeart } from "react-icons/ci";
 import { FiEye } from "react-icons/fi";
 import StarsComp from "./StarsComp";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { useScroll } from "@/context/ScrollProvider";
 
 const products = [
   {
@@ -60,27 +59,11 @@ const products = [
 ];
 
 const Products = () => {
-  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const {scrollRef} = useScroll();
 
-  const prev = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollTo({
-        left: scrollRef.current.scrollLeft - 410,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const next = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollTo({
-        left: scrollRef.current.scrollLeft + 410,
-        behavior: "smooth",
-      });
-    }
-  };
+  
   return (
-    <div className="relative">
+    
        <main 
        ref={scrollRef}
        className="flex overflow-x-auto gap-3 scrollbar-hide scroll-smooth ">
@@ -130,22 +113,9 @@ const Products = () => {
           
         </section>
       ))}
-      <div className='w-[90px] h-[46px] flex justify-between items-center absolute right-[5px] top-[-80px] md:top-[-60px]  '>
-        <button 
-        type="button"
-        onClick={() => prev()}
-        className='w-9 h-9 bg-[#F5F5F5]  flex justify-center items-center rounded-full'>
-          <FaArrowLeft className='w-[15px] h-[15px] '/>
-        </button>
-        <button 
-        type="button"
-        onClick={() => next()}
-        className='w-9 h-9 bg-[#F5F5F5] flex justify-center items-center rounded-full'>
-          <FaArrowRight className='w-[15px] h-[15px]'/>
-        </button>
-      </div>
+      
     </main>
-    </div>
+    
    
   );
 };

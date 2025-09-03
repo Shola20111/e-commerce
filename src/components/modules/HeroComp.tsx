@@ -26,6 +26,8 @@ const HeroComp = () => {
       <div className='pt-10 w-full relative '>
         <Card/>
       </div>
+     
+      
     </div>
   )
 }
