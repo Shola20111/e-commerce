@@ -6,7 +6,6 @@ import { CiHeart } from "react-icons/ci";
 import { FiEye } from "react-icons/fi";
 import StarsComp from "./StarsComp";
 import { useScroll } from "@/context/ScrollProvider";
-import { useState } from "react";
 
 const products = [
   {
@@ -59,10 +58,8 @@ const products = [
   },
 ];
 
-const Products = () => {
+export const Products1 = () => {
   const {scrollRef} = useScroll();
-
-  const [isActive, setIsActive] = useState(null)
 
   
   return (
@@ -76,10 +73,7 @@ const Products = () => {
           className="min-w-[270px] h-[350px] flex flex-col"
         >
          
-          <div 
-          onMouseEnter={()=>setIsActive(product.id)}
-          onMouseLeave={()=>setIsActive(null)} 
-          className="w-full h-[250px] flex justify-center items-center rounded-[4px] bg-[#f5f5f5] relative">
+          <div className="w-full h-[250px] flex justify-center items-center rounded-[4px] bg-[#f5f5f5] relative">
             <div className="w-[172px] h-[152px] flex justify-center items-center">
               <Image
                 src={product.image}
@@ -87,15 +81,8 @@ const Products = () => {
                 height={152}
                 alt={product.name}
               />
-              {
-                isActive ===product.id &&
-              <button className="w-full h-[41px] rounded-b-4 bg-[#000] text-[#fff] text-[16px] leading-[24px] font-medium absolute right-0 left-0 bottom-0">
-                Add to Cart
-              </button>
-              
-              }
             </div>
-              
+
             
             <div className="bg-[#DB4444] w-[55px] h-[26px] rounded-[4px] flex justify-center items-center absolute left-2 top-2">
               <p className="text-white">{product.discount}</p>
@@ -133,4 +120,3 @@ const Products = () => {
   );
 };
 
-export default Products;

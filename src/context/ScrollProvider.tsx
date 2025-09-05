@@ -2,12 +2,12 @@
 import { createContext, useRef, useContext } from "react";
 
 type ScrollContextType = {
-  scrollRef: React.RefObject<HTMLDivElement>;
+  scrollRef: React.RefObject<HTMLDivElement | null>;
   prev: () => void;
   next: () => void;
 };
 
-const ScrollContext = createContext<ScrollContextType | undefined>(undefined);
+const ScrollContext = createContext<ScrollContextType | null>(null);
 
 export const ScrollProvider = ({ children }: { children: React.ReactNode }) => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
