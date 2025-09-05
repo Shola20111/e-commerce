@@ -1,8 +1,9 @@
 'use client'
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import Subheader from '../common/Subheader'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 import Image from 'next/image'
+
 
 const items = [
   {
@@ -53,7 +54,9 @@ const items = [
 ]
 
 const Categories = () => {
-  const categoryScrollRef = useRef<HTMLDivElement>(null);
+  
+  const [isActive, setIsActive] = useState<number | null>(null)
+  const categoryScrollRef = useRef<HTMLDivElement | null>(null);
   const prev = ()=>{
     if(categoryScrollRef.current){
       categoryScrollRef.current.scrollBy({left:182, behavior:'smooth'})
@@ -97,9 +100,11 @@ const Categories = () => {
         {items.map((item)=>(
           <div 
           key={item.id}
-          className=' w-full h-[145px] flex gap-[30px] items-center '>
+          onClick={()=>setIsActive(item.id)}
+          className={`${isActive==item.id? 'bg-[#DB4444] text-white':''} w-full h-[145px] rounded flex gap-[30px] items-center `}>
             <div 
-            className='w-[170px] h-full rounded-[4px] border-1 flex flex-col justify-center items-center gap-3 '>
+            
+            className={`cursor-pointer w-[170px] h-full rounded-[4px] border overflow-hide flex flex-col justify-center items-center gap-3 `}>
               <Image src={item.image} width={56} height={56} alt={item.title} />
               <h5>{item.title}</h5>
             </div>
