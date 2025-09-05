@@ -29,7 +29,7 @@ const cards = [
 export default function Card() {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Auto slide every 10 seconds
+ 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % cards.length);
@@ -39,7 +39,7 @@ export default function Card() {
 
   return (
     <section>
-      {/* Right Side */}
+     
       <div className="relative flex flex-col items-center justify-center w-full h-[250px] md:h-[344px]">
         {cards.map((card, index) => (
           <div
@@ -48,7 +48,7 @@ export default function Card() {
               index === activeIndex ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
           >
-            {/* Background Image */}
+            
             <Image
               src={card.image}
               alt={card.title}
@@ -56,10 +56,7 @@ export default function Card() {
               className=" w-full h-full -z-10"
             />
 
-            {/* Overlay for better text readability */}
-            {/* <div className="absolute inset-0 bg-black/40 rounded-xl"></div> */}
-
-            {/* Card Content */}
+            
             <p className="flex items-center mt-2 max-w-md absolute bottom-10 left-15 z-10">
               {card.callToAction}
               <GoArrowRight className="ml-2"/>
@@ -67,7 +64,7 @@ export default function Card() {
           </div>
         ))}
 
-        {/* Radio Indicators */}
+        
         <div className="absolute bottom-4 flex gap-2 z-20">
           {cards.map((_, index) => (
             <input

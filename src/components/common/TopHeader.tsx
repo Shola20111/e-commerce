@@ -7,7 +7,7 @@ const TopHeader = () => {
   const [lang, setLang] = useState('Englsh')
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Close when clicking outside
+ 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -22,8 +22,8 @@ const TopHeader = () => {
   }, []);
 
   const handleMenuClick = (menu: string) => {
-    setLang(menu); //open select language
-    setOpen(false); // close after click
+    setLang(menu); 
+    setOpen(false); 
   };
 
 	
@@ -51,7 +51,7 @@ const TopHeader = () => {
 							{
 								open &&
 							
-                <div  className='flex flex-col justify-start text-[20px] bg-[#fff] text-[#000] h-auto w-[200px] gap-3 p-2 absolute top-[48px] left-0 ' style={{boxShadow:'0 0 10px rgba(0, 0, 0, 0.5'}}>
+                <div  className='flex flex-col justify-start text-[20px] bg-[#fff] text-[#000] h-auto w-[200px] gap-3 p-2 absolute top-[48px] left-[-100px] ' style={{boxShadow:'0 0 10px rgba(0, 0, 0, 0.5'}}>
                   {["English", "Arabic", "French"].map((menu) => (
                     <button
                       key={menu}
