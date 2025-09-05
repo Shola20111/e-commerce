@@ -44,8 +44,8 @@ const DailyMarket = () => {
   <div className="mt-6 md:mt-0">
     <Products />
   </div> 
-  <div className='w-full h-auto flex justify-center items-center '>
-    <Button />
+  <div className='w-full h-auto flex justify-center items-center'>
+    <Button text="View All Products"/>
   </div>
 
 </section>
