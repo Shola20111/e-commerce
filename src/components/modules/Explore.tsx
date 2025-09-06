@@ -4,6 +4,7 @@ import Button from '../common/Button'
 import Subheader from '../common/Subheader'
 
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
+import ProductsExplore from '../common/ProductsExplore'
 
 const Explore = () => {
   return (
@@ -26,7 +27,7 @@ const Explore = () => {
         </div>
       </div>
       <div>
-        
+        <ProductsExplore/>
       </div>
       <div></div>
       <div>
