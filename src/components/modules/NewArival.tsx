@@ -17,7 +17,7 @@ const NewArival = ()=>{
 						<div className="font-medium text-[16px] text-[#fff] leading-[24px] ">Shop Now</div>
 					</div>
 				</div>
-				<div className="grid grid-rows-2">
+				<div className="grid grid-rows-2 gap-3">
 					<div className="bg-[#000] flex items-end relative">
 						<div className="w-full h-full flex justify-end items-end ">
 							<Image src='/woman-cap.png' width={243} height={246} alt="Woman Cap" className="object-cover w-[85%] h-full" />
