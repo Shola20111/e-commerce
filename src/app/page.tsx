@@ -8,6 +8,7 @@ import CategoryBanner from '@/components/modules/CategoryBanner';
 import Explore from '@/components/modules/Explore';
 
 
+
 export default function Home() {
   return (
     <div className='px-[10px] md:px-[50px] lg:px-[135px] w-full h-auto flex flex-col gap-[100px]'>
@@ -17,6 +18,8 @@ export default function Home() {
       <MonthlyMarket/>
       <CategoryBanner/>
       <Explore/>
+      
+      
     </div>
   )
 }
