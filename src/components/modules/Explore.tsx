@@ -7,7 +7,8 @@ import { Card2 } from '../common/productsExplore2/Card2'
 import { Card3 } from '../common/productsExplore2/Card3'
 import { Card4 } from '../common/productsExplore2/Card4'
 import { Card1 } from '../common/productsExplore2/card1'
-import ProductsExplore from '../common/productsExplore'
+import ProductsExplore from '../common/ProductsExplore'
+
 
 const Explore = () => {
   return (
