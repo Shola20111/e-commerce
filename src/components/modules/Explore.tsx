@@ -5,10 +5,14 @@ import Subheader from '../common/Subheader'
 
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 import ProductsExplore from '../common/ProductsExplore'
+import { Card1 } from '../common/productsExplore2/card1'
+import { Card2 } from '../common/productsExplore2/Card2'
+import { Card3 } from '../common/productsExplore2/Card3'
+import { Card4 } from '../common/productsExplore2/Card4'
 
 const Explore = () => {
   return (
-    <section className='flex flex-col justify-between'>
+    <section className=' flex flex-col w-full h-auto gap-5'>
       <div className='flex justify-between items-end'>
         <Subheader title='Explore Our Products' subTitle='Our Products' />
         <div className='w-[90px] h-[46px] flex justify-between items-center '>
@@ -29,8 +33,13 @@ const Explore = () => {
       <div>
         <ProductsExplore/>
       </div>
-      <div></div>
-      <div>
+      <div className='flex w-full h-auto gap-3'>
+        <Card1/>
+        <Card2/>
+        <Card3/>
+        <Card4/>
+      </div>
+      <div className=''>
         <Button text='View All Products'/>
       </div>
     </section>

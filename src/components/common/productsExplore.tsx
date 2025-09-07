@@ -71,7 +71,7 @@ const ProductsExplore = () => {
       {products.map((product) => (
         <section
           key={product.id}
-          className="min-w-[270px] h-[350px] flex flex-col"
+          className="min-w-[260px] max-w-[270px] h-[350px] flex flex-col"
         >
          
           <div 
