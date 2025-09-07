@@ -5,7 +5,7 @@ import Subheader from '../common/Subheader'
 
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 import ProductsExplore from '../common/ProductsExplore'
-import { Card1 } from '../common/productsExplore2/card1'
+import { Card1 } from '../common/productsExplore2/Card1'
 import { Card2 } from '../common/productsExplore2/Card2'
 import { Card3 } from '../common/productsExplore2/Card3'
 import { Card4 } from '../common/productsExplore2/Card4'
@@ -39,7 +39,7 @@ const Explore = () => {
         <Card3/>
         <Card4/>
       </div>
-      <div className=''>
+      <div className='mx-auto'>
         <Button text='View All Products'/>
       </div>
     </section>
