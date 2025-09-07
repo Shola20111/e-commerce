@@ -6,6 +6,7 @@ import Categories from '@/components/modules/Categories';
 import MonthlyMarket from '@/components/modules/MonthlyMarket';
 import CategoryBanner from '@/components/modules/CategoryBanner';
 import Explore from '@/components/modules/Explore';
+import NewArival from '@/components/modules/NewArival';
 
 
 
@@ -18,6 +19,7 @@ export default function Home() {
       <MonthlyMarket/>
       <CategoryBanner/>
       <Explore/>
+      <NewArival/>
       
       
     </div>
