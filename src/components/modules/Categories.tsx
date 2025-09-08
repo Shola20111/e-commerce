@@ -59,13 +59,13 @@ const Categories = () => {
   const categoryScrollRef = useRef<HTMLDivElement | null>(null);
   const prev = ()=>{
     if(categoryScrollRef.current){
-      categoryScrollRef.current.scrollBy({left:182, behavior:'smooth'})
+      categoryScrollRef.current.scrollBy({left:-182, behavior:'smooth'})
     }
   }
 
   const next = ()=>{
     if(categoryScrollRef.current){
-      categoryScrollRef.current.scrollBy({left:-182, behavior:'smooth'})
+      categoryScrollRef.current.scrollBy({left:182, behavior:'smooth'})
     }
   }
 

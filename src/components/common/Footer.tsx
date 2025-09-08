@@ -1,11 +1,16 @@
-import { SendHorizontal } from 'lucide-react'
+import { Facebook, SendHorizontal } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
+import { AiOutlineCopyright } from 'react-icons/ai'
+import { CiInstagram, CiLinkedin, CiTwitter } from 'react-icons/ci'
+import { FaFacebook } from 'react-icons/fa'
+import { TfiLinkedin } from 'react-icons/tfi'
+import { TiSocialFacebook, TiSocialTwitter } from 'react-icons/ti'
 
 const Footer = () => {
   return (
-    <div className='w-full h-[440px] bg-[#000] flex justify-center items-center'>
-      <div className='w-[80%] h-[236px] flex justify-between border ' >
+    <div className='w-full h-auto lg:h-[440px] bg-[#000] flex flex-col justify-between items-center'>
+      <div className='w-[100%] md:w-[90%] lg:w-[80%] h-auto gap-5 lg:h-[236px] flex flex-col md:grid grid-cols-2 lg:flex lg:flex-row justify-between my-auto' >
         <div className='w-[217px] h-[188px] flex flex-col gap-3'>
           <h1 className='text-[24px] font-extrabold leading-[24px] tracking-[3%] text-[#fafafa]'>Exclusive</h1>
           <h5 className='leading-[28px] text-[20px] font-medium text-[#fafafa]  '>Subscribe</h5>
@@ -40,20 +45,46 @@ const Footer = () => {
         <div className='w-[198px] h-auto flex flex-col gap-3'>
           <h5 className='leading-[28px] text-[20px] font-medium text-[#fafafa]  '>Download App</h5>
           <p className='text-[12px] leading-[18px] opacity-[70%] text-[#fafafa] '>Save $3 with App New User Only</p>
-          <div>
+          <div className='flex gap-0.5'>
             <div className='w-[80px] h-[80px] flex justify-center items-center'>
               <Image src='/Qrcode.png' width={76} height={76} alt='Qrcode' className='w-full h-full'/>
             </div>
+            <div className='flex flex-col gap-0.5'>
+              <div className='w-[110px] h-[40px] flex justify-center items-center '>
+                <Image src='/play-store.png' width={104} height={30} alt='Play Store' className='w-full h-full'/>
+              </div>
+              <div className='w-[110px] h-[40px] flex justify-center items-center '>
+                <Image src='/appstore.png' width={104} height={30} alt='Apple Store' className='w-full h-full'/>
+              </div>
+            </div>
+          </div>
+          <div className='flex gap-6 pl-2'>
             <div>
-              <div></div>
-              <div></div>
+              <TiSocialFacebook className='w-[15px] h-[20px] text-white'/>
+            </div>
+            <div>
+              <CiTwitter className='w-[15px] h-[20px] text-white'/>
+            </div>
+            <div>
+              <CiInstagram className='w-[15px] h-[20px] text-white'/>
+            </div>
+            <div>
+              <TfiLinkedin className='w-[15px] h-[20px] text-white'/>
             </div>
           </div>
         </div>
         
         
       </div>
-      
+
+      <div className='w-full h-[40px] flex justify-center gap-1 items-center text-white opacity-[20%] border-t'>
+        <div className='w-6 h-6 rounded-full flex justify-center items-center'>
+          <AiOutlineCopyright className='w-4 h-4 ' />
+        </div>
+        <div className='text-[16px] leading-[24px]  '>
+          Copyright Rimel 2022. All right reserved
+        </div>
+      </div>
 
     </div>
   )

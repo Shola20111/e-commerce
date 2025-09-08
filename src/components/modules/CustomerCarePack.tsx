@@ -12,7 +12,7 @@ const CustomerCarePack = () => {
   
   return (
     <section className='w-full h-auto flex '>
-      <div className='flex mx-auto gap-10'>
+      <div className='flex flex-col md:grid grid-cols-3  mx-auto gap-10'>
         {sureLists.map((sure)=>
         <div
         className='flex flex-col justify-center items-center w-[249px] h-[161px] '
