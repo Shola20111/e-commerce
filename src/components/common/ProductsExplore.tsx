@@ -1,5 +1,3 @@
-// 
-
 "use client";
 import Image from "next/image";
 import { CiHeart } from "react-icons/ci";
@@ -7,6 +5,7 @@ import { FiEye } from "react-icons/fi";
 import StarsComp from "./StarsComp";
 import { useScroll } from "@/context/ScrollProvider";
 import { useState } from "react";
+import { useExploreScroll } from "@/context/ExploreScrollProvider";
 
 const products = [
   {
@@ -19,27 +18,27 @@ const products = [
   },
   {
     id: 2,
-    name: "AK-900 Wired Keyboard",
+    name: "Gaming Mouse X15",
     price: 90,
     oldPrice: 130,
     discount: "-30%",
-    image: "/keyboard.png",
+    image: "/game.png",
   },
   {
     id: 3,
-    name: "IPS LCD Gaming Monitor",
+    name: "Mechanical Keyboard K20",
     price: 150,
     oldPrice: 200,
     discount: "-25%",
-    image: "/monitor.png",
+    image: "/game.png",
   },
   {
     id: 4,
-    name: "S-Series Comfort Chair ",
+    name: "Wireless Headset H30",
     price: 70,
     oldPrice: 100,
     discount: "-30%",
-    image: "/chair.png",
+    image: "/game.png",
   },
   {
     id: 5,
@@ -59,8 +58,8 @@ const products = [
   },
 ];
 
-const Products = () => {
-  const {scrollRef} = useScroll();
+const ProductsExplore = () => {
+  const {exploreScrollRef } = useExploreScroll();
 
   const [isActive, setIsActive] = useState<number | null>(null)
 
@@ -68,7 +67,8 @@ const Products = () => {
   return (
     
        <main 
-       ref={scrollRef}
+    
+       ref={exploreScrollRef}
        className="flex overflow-x-auto gap-3 scrollbar-hide scroll-smooth ">
       {products.map((product) => (
         <section
@@ -86,7 +86,6 @@ const Products = () => {
                 width={172}
                 height={152}
                 alt={product.name}
-                className="w-[85%] h-[86%] "
               />
               {
                 isActive ===product.id &&
@@ -134,4 +133,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default ProductsExplore;

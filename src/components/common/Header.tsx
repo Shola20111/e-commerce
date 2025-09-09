@@ -26,7 +26,7 @@ const Header = () => {
       <div className="flex items-center justify-between w-full md:w-[700px] h-full">
        
         <div className="flex items-center w-[220px] md:w-[150px] h-full">
-          <Image src="/logo.png" width={200} height={20} alt="Logo" />
+          <Image src="/logo.jpg" width={200} height={20} alt="Logo" />
         </div>
 
        
