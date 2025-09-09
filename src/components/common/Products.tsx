@@ -62,7 +62,8 @@ const products = [
 const Products = () => {
   const {scrollRef} = useScroll();
 
-  const [isActive, setIsActive] = useState(null)
+  const [isActive, setIsActive] = useState<number | null>(null)
+
 
   
   return (

@@ -1,5 +1,3 @@
-// 
-
 "use client";
 import Image from "next/image";
 import { CiHeart } from "react-icons/ci";
@@ -58,21 +56,21 @@ const products = [
   },
 ];
 
-export const Products1 = () => {
-  const {scrollRef} = useScroll();
+const ProductsExplore = () => {
+  const { scrollRef } = useScroll();
 
-  
+
   return (
-    
-       <main 
-       ref={scrollRef}
-       className="flex overflow-x-auto gap-3 scrollbar-hide scroll-smooth ">
+
+    <main
+      ref={scrollRef}
+      className="flex overflow-x-auto gap-3 scrollbar-hide scroll-smooth ">
       {products.map((product) => (
         <section
           key={product.id}
           className="min-w-[270px] h-[350px] flex flex-col"
         >
-         
+
           <div className="w-full h-[250px] flex justify-center items-center rounded-[4px] bg-[#f5f5f5] relative">
             <div className="w-[172px] h-[152px] flex justify-center items-center">
               <Image
@@ -83,12 +81,12 @@ export const Products1 = () => {
               />
             </div>
 
-            
+
             <div className="bg-[#DB4444] w-[55px] h-[26px] rounded-[4px] flex justify-center items-center absolute left-2 top-2">
               <p className="text-white">{product.discount}</p>
             </div>
 
-           
+
             <div className="flex flex-col justify-center items-center gap-2 absolute top-10 right-4">
               <div className="w-[25px] h-[25px] bg-white flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200">
                 <CiHeart size={20} />
@@ -99,7 +97,7 @@ export const Products1 = () => {
             </div>
           </div>
 
-          
+
           <div className="h-auto flex flex-col gap-[8px] mt-2">
             <h4 className="text-[16px] leading-[24px] font-medium">
               {product.name}
@@ -110,13 +108,14 @@ export const Products1 = () => {
             </div>
             <StarsComp />
           </div>
-          
+
         </section>
       ))}
-      
+
     </main>
-    
-   
+
+
   );
 };
 
+export default ProductsExplore
