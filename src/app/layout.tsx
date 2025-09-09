@@ -6,6 +6,7 @@ import TopHeader from "@/components/common/TopHeader";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import { ScrollProvider } from "@/context/ScrollProvider";
+import { ExploreScrollProvider } from "@/context/ExploreScrollProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -37,12 +38,17 @@ export default function RootLayout({
       <body
         className={`${poppins.variable}  antialiased w-[100%] h-auto mx-auto`}
       >
-        <ScrollProvider>
-          <TopHeader/>
-          <Header/>
-          {children}
-          <Footer/>
-        </ScrollProvider>
+        <ExploreScrollProvider>
+          <ScrollProvider>
+            <TopHeader/>
+            <Header/>
+            {children}
+            <Footer/>
+          </ScrollProvider>
+        </ExploreScrollProvider>
+          
+        
+        
         
        
         

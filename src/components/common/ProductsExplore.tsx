@@ -5,6 +5,7 @@ import { FiEye } from "react-icons/fi";
 import StarsComp from "./StarsComp";
 import { useScroll } from "@/context/ScrollProvider";
 import { useState } from "react";
+import { useExploreScroll } from "@/context/ExploreScrollProvider";
 
 const products = [
   {
@@ -58,7 +59,7 @@ const products = [
 ];
 
 const ProductsExplore = () => {
-  const {scrollRef} = useScroll();
+  const {exploreScrollRef } = useExploreScroll();
 
   const [isActive, setIsActive] = useState<number | null>(null)
 
@@ -66,7 +67,8 @@ const ProductsExplore = () => {
   return (
     
        <main 
-       ref={scrollRef}
+    
+       ref={exploreScrollRef}
        className="flex overflow-x-auto gap-3 scrollbar-hide scroll-smooth ">
       {products.map((product) => (
         <section
