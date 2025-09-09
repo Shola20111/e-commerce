@@ -53,7 +53,7 @@ export default function ToGoComp() {
   }, []);
 
   const Column = ({ label, value }: { label: string; value: number }) => (
-    <div className="flex flex-col items-start justify-center  w-[46px] h-auto bg-white">
+    <div className="flex flex-col items-center justify-center  w-[60px] h-[60px] bg-white rounded-full">
       <span className="text-xs font-medium text-gray-600">{label}</span>
       <span className="text-xlg  font-extrabold text-gray-900">
         {String(value).padStart(2, "0")}
