@@ -19,27 +19,27 @@ const products = [
   },
   {
     id: 2,
-    name: "Gaming Mouse X15",
+    name: "AK-900 Wired Keyboard",
     price: 90,
     oldPrice: 130,
     discount: "-30%",
-    image: "/game.png",
+    image: "/keyboard.png",
   },
   {
     id: 3,
-    name: "Mechanical Keyboard K20",
+    name: "IPS LCD Gaming Monitor",
     price: 150,
     oldPrice: 200,
     discount: "-25%",
-    image: "/game.png",
+    image: "/monitor.png",
   },
   {
     id: 4,
-    name: "Wireless Headset H30",
+    name: "S-Series Comfort Chair ",
     price: 70,
     oldPrice: 100,
     discount: "-30%",
-    image: "/game.png",
+    image: "/chair.png",
   },
   {
     id: 5,
@@ -62,7 +62,7 @@ const products = [
 const Products = () => {
   const {scrollRef} = useScroll();
 
-  const [isActive, setIsActive] = useState(null)
+  const [isActive, setIsActive] = useState<number | null>(null)
 
   
   return (
@@ -73,7 +73,7 @@ const Products = () => {
       {products.map((product) => (
         <section
           key={product.id}
-          className="min-w-[270px] h-[350px] flex flex-col"
+          className="min-w-[260px] max-w-[270px] h-[350px] flex flex-col"
         >
          
           <div 
@@ -86,6 +86,7 @@ const Products = () => {
                 width={172}
                 height={152}
                 alt={product.name}
+                className="w-[85%] h-[86%] "
               />
               {
                 isActive ===product.id &&
