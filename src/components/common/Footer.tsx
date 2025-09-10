@@ -2,15 +2,15 @@ import { Facebook, SendHorizontal } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
 import { AiOutlineCopyright } from 'react-icons/ai'
-import { CiInstagram, CiLinkedin, CiTwitter } from 'react-icons/ci'
-import { FaFacebook } from 'react-icons/fa'
+import { CiInstagram, CiTwitter } from 'react-icons/ci'
+
 import { TfiLinkedin } from 'react-icons/tfi'
-import { TiSocialFacebook, TiSocialTwitter } from 'react-icons/ti'
+import { TiSocialFacebook } from 'react-icons/ti'
 
 const Footer = () => {
   return (
     <div className='w-full h-auto lg:h-[440px] bg-[#000] flex flex-col justify-between items-center'>
-      <div className='w-[100%] md:w-[90%] lg:w-[80%] h-auto gap-5 lg:h-[236px] flex flex-col md:grid grid-cols-2 lg:flex lg:flex-row justify-between my-auto' >
+      <div className='w-[95%] md:w-[90%] lg:w-[80%] h-auto gap-5 lg:h-[236px] flex flex-col md:grid grid-cols-2 lg:flex lg:flex-row justify-between my-auto' >
         <div className='w-[217px] h-[188px] flex flex-col gap-3'>
           <h1 className='text-[24px] font-extrabold leading-[24px] tracking-[3%] text-[#fafafa]'>Exclusive</h1>
           <h5 className='leading-[28px] text-[20px] font-medium text-[#fafafa]  '>Subscribe</h5>

@@ -28,20 +28,20 @@ const TopHeader = () => {
 
 	
   return (
-    <div className='w-full h-[48px] bg-[#000] text-[#fff] px-[50px] md:px-[135px] flex justify-end items-center'>
-        <div className='w-9/10 h-full flex justify-start md:justify-center items-center gap-2'>
-            <div className='hidden lg:block '>
-                <p className='text-[14px] leading-[21px] font-poppins'>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
+    <div className='w-full h-[48px] bg-[#000] text-[#fff] mx-auto flex justify-end items-center'>
+        <div className='w-8/10 h-full flex justify-start md:justify-center items-center gap-2 border'>
+            <div className=' '>
+                <p className='text-[8px] md:text-[12] lg:text-[14px] leading-[21px] font-poppins'>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
             </div>
             <div>
                 <big 
-                    className='font-semibold hover:underline font-poppins' 
+                    className='font-semibold hover:underline font-poppins text-[10px] md:text-[18px]' 
                     >
                     ShopNow
                 </big>
             </div>
         </div>
-        <div className='w-1/10 h-full flex justify-center items-center relative cursor-pointer' ref={dropdownRef}>
+        <div className='border w-2/10 h-full flex justify-center items-center relative cursor-pointer' ref={dropdownRef}>
             <button onClick={()=>setOpen(!open)} className=' flex items-center justify-end gap-1.5 px-2 font-poppins'>
               
                 <p>{lang}</p>
