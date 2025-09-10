@@ -19,6 +19,7 @@ const Header = () => {
     { href: "/contact", label: "Contact" },
     { href: "/about", label: "About" },
     { href: "/signUp", label: "Sign Up" },
+    { href: "/login", label: "Login" },
   ];
 
   const [signUp, setSignUp] = useState("");
@@ -53,11 +54,14 @@ const Header = () => {
           <SearchBar />
         </div>
 
-        
-        <div className="flex gap-[16px]">
-          <CiHeart className={`${signUp === '/signUp'? 'hidden' : ''} w-[25px] h-[25px]`} />
-          <BsCart3 className={`${signUp === '/signUp'? 'hidden' : ''} w-[25px] h-[20px]`} />
+        {
+          signUp !== '/signUp'  &&
+          <div className="flex gap-[16px]">
+          <CiHeart className={`w-[25px] h-[25px]`} />
+          <BsCart3 className={`w-[25px] h-[20px]`} />
         </div>
+        }
+        
 
         
         <div className="md:hidden">

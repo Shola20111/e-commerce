@@ -2,10 +2,10 @@ import { Facebook, SendHorizontal } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
 import { AiOutlineCopyright } from 'react-icons/ai'
-import { CiInstagram, CiLinkedin, CiTwitter } from 'react-icons/ci'
-import { FaFacebook } from 'react-icons/fa'
+import { CiInstagram, CiTwitter } from 'react-icons/ci'
+
 import { TfiLinkedin } from 'react-icons/tfi'
-import { TiSocialFacebook, TiSocialTwitter } from 'react-icons/ti'
+import { TiSocialFacebook } from 'react-icons/ti'
 
 const Footer = () => {
   return (
