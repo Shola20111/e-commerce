@@ -55,7 +55,7 @@ const Header = () => {
         </div>
 
         {
-          signUp !== '/signUp'  &&
+          signUp !== '/signUp' &&
           <div className="flex gap-[16px]">
           <CiHeart className={`w-[25px] h-[25px]`} />
           <BsCart3 className={`w-[25px] h-[20px]`} />
