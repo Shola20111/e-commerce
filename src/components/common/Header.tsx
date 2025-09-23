@@ -12,14 +12,17 @@ import SearchBar from "./SearchBar";
 const Header = () => {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  
 
   const links = [
     { href: "/", label: "Home" },
     { href: "/contact", label: "Contact" },
     { href: "/about", label: "About" },
     { href: "/signUp", label: "Sign Up" },
+    { href: "/login", label: "Login" },
   ];
 
+  const [signUp, setSignUp] = useState("");
   return (
     <div className="px-[10px] md:px-[50px] lg:px-[135px] w-full h-[60px] mt-[20px] md:mt-[40px] pb-[10px] md:pb-[15px] border border-[#e4e0e0] mx-auto flex justify-between items-center">
       
@@ -36,6 +39,7 @@ const Header = () => {
               key={link.href}
               href={link.href}
               className={pathname === link.href ? "underline" : ""}
+              onClick={()=>setSignUp(link.href)}
             >
               <Navbutton text={link.label} />
             </Link>
@@ -50,11 +54,14 @@ const Header = () => {
           <SearchBar />
         </div>
 
-        
-        <div className="flex gap-[16px]">
-          <CiHeart className="w-[25px] h-[25px]" />
-          <BsCart3 className="w-[25px] h-[20px]" />
+        {
+          signUp !== '/signUp'  &&
+          <div className="flex gap-[16px]">
+          <CiHeart className={`w-[25px] h-[25px]`} />
+          <BsCart3 className={`w-[25px] h-[20px]`} />
         </div>
+        }
+        
 
         
         <div className="md:hidden">
