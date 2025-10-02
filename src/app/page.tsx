@@ -8,22 +8,39 @@ import CategoryBanner from '@/components/modules/CategoryBanner';
 import Explore from '@/components/modules/Explore';
 import NewArival from '@/components/modules/NewArival';
 import CustomerCarePack from '@/components/modules/CustomerCarePack';
+import Header from '@/components/common/Header';
+import { CiHeart } from 'react-icons/ci';
+import { BsCart3 } from 'react-icons/bs';
+import Image from 'next/image';
 
 
 
 export default function Home() {
   return (
-    <div className='px-[10px] md:px-[50px] lg:px-[135px] w-full h-auto flex flex-col gap-[100px]'>
-      <HeroComp/>
-      <DailyMarket/>
-      <Categories/>
-      <MonthlyMarket/>
-      <CategoryBanner/>
-      <Explore/>
-      <NewArival/>
-      <CustomerCarePack/>
-      
-      
-    </div>
+    <section className='w-[80%]'>
+      <div className='w-full flex items-center gap-[16px] mt-4 pb-2 border-b border-[#e4e0e0] '>
+        <Header/>
+        <div className="h-[60px] flex gap-[16px] items-center">
+          <CiHeart className={`w-[25px] h-[25px]`} />
+          <BsCart3 className={`w-[25px] h-[20px]`} />
+          <Image src='/user.png' width={18} height={18} alt='User'/>
+        </div>
+        
+      </div>
+
+      <div className=' w-full h-auto flex flex-col gap-[100px]'>
+        <HeroComp/>
+        <DailyMarket/>
+        <Categories/>
+        <MonthlyMarket/>
+        <CategoryBanner/>
+        <Explore/>
+        <NewArival/>
+        <CustomerCarePack/>
+        
+        
+      </div>
+    </section>
+    
   )
 }

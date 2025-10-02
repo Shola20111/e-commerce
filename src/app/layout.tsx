@@ -36,12 +36,11 @@ export default function RootLayout({
       
       </head>
       <body
-        className={`${poppins.variable}  antialiased w-[100%] h-auto mx-auto`}
+        className={`${poppins.variable}  antialiased w-full h-auto mx-auto flex flex-col items-center`}
       >
         <ExploreScrollProvider>
           <ScrollProvider>
             <TopHeader/>
-            <Header/>
             {children}
             <Footer/>
           </ScrollProvider>
