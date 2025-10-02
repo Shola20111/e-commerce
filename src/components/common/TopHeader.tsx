@@ -28,10 +28,10 @@ const TopHeader = () => {
 
 	
   return (
-    <div className='w-full h-[48px] bg-[#000] text-[#fff] mx-auto flex justify-end items-center'>
-        <div className='w-8/10 h-full flex justify-start md:justify-center items-center gap-2 border'>
+    <div className='w-full h-[48px] bg-[#000] text-[#fff] mx-auto flex justify-end items-center pr-[5%] md:pr-[10%] '>
+        <div className='w-8/10 h-full flex justify-start md:justify-center items-center gap-2'>
             <div className=' '>
-                <p className='text-[8px] md:text-[12] lg:text-[14px] leading-[21px] font-poppins'>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
+                <p className='text-[10px] md:text-[14px] leading-[21px] font-poppins'>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
             </div>
             <div>
                 <big 
@@ -41,7 +41,7 @@ const TopHeader = () => {
                 </big>
             </div>
         </div>
-        <div className='border w-2/10 h-full flex justify-center items-center relative cursor-pointer' ref={dropdownRef}>
+        <div className=' h-full flex justify-center relative cursor-pointer' ref={dropdownRef}>
             <button onClick={()=>setOpen(!open)} className=' flex items-center justify-end gap-1.5 px-2 font-poppins'>
               
                 <p>{lang}</p>
