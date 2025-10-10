@@ -53,74 +53,6 @@ const items = [
   },
 ]
 
-// const Categories = ({ items = [] }) => {
-
-//   const [isActive, setIsActive] = useState<number | null>(null)
-//   const categoryScrollRef = useRef<HTMLDivElement | null>(null);
-//   const prev = () => {
-//     if (categoryScrollRef.current) {
-//       categoryScrollRef.current.scrollBy({ left: 182, behavior: 'smooth' })
-//     }
-//   }
-
-//   const next = () => {
-//     if (categoryScrollRef.current) {
-//       categoryScrollRef.current.scrollBy({ left: -182, behavior: 'smooth' })
-//     }
-//   }
-
-//   return (
-//     <section className='flex flex-col w-full h-auto gap-[30px] items-start'>
-//       <div className='flex justify-between w-full'>
-//         <div>
-//           <Subheader title='Browse By Category' subTitle='categories' />
-//         </div>
-//         <div className='flex items-end'>
-//           <div className='w-[90px] h-[46px] flex justify-between items-center '>
-//             <button
-//               type="button"
-//               onClick={() => prev()}
-//               className='w-9 h-9 bg-[#F5F5F5]  flex justify-center items-center rounded-full'>
-//               <FaArrowLeft className='w-[15px] h-[15px] ' />
-//             </button>
-//             <button
-//               type="button"
-//               onClick={() => next()}
-//               className='w-9 h-9 bg-[#F5F5F5] flex justify-center items-center rounded-full'>
-//               <FaArrowRight className='w-[15px] h-[15px]' />
-//             </button>
-//           </div>
-//         </div>
-//       </div>
-
-//       <div
-//         ref={categoryScrollRef}
-//         className='w-full flex overflow-x-auto gap-3 scrollbar-hide scroll-smooth '
-//       >
-//         {items.map((item) => (
-//           <div
-//             key={item.id}
-//             onClick={() => setIsActive(item.id)}
-//             className={`${isActive == item.id ? 'bg-[#DB4444] text-white' : ''} w-full h-[145px] rounded flex gap-[30px] items-center `}>
-//             <div
-
-//               className={`cursor-pointer w-[170px] h-full rounded-[4px] border overflow-hide flex flex-col justify-center items-center gap-3 `}>
-//               <Image src={item.image} width={56} height={56} alt={item.title} />
-//               <h5>{item.title}</h5>
-//             </div>
-
-//           </div>
-//         ))}
-
-//       </div>
-
-
-//     </section>
-//   )
-// }
-
-
-
 const Categories = () => {
   const [isActive, setIsActive] = useState<number | null>(null)
   const categoryScrollRef = useRef<HTMLDivElement | null>(null);
@@ -162,7 +94,7 @@ const Categories = () => {
             className={`${isActive === item.id ? 'bg-[#DB4444] text-white' : ''} w-full h-[145px] rounded flex gap-[30px] items-center`}
           >
             <div className="cursor-pointer w-[170px] h-full rounded-[4px] border flex flex-col justify-center items-center gap-3">
-              <Image src={item.image} width={56} height={56} alt={item.title} />
+              <Image className='outline-white' src={item.image} width={56} height={56} alt={item.title} />
               <h5>{item.title}</h5>
             </div>
           </div>

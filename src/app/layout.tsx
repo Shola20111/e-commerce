@@ -3,10 +3,11 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 
 import TopHeader from "@/components/common/TopHeader";
-import Header from "@/components/common/Header";
+import Header from "@/components/common/header/Header";
 import Footer from "@/components/common/Footer";
 import { ScrollProvider } from "@/context/ScrollProvider";
 import { ExploreScrollProvider } from "@/context/ExploreScrollProvider";
+import { CardProvider } from "@/context/CardContext";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -36,16 +37,18 @@ export default function RootLayout({
       
       </head>
       <body
-        className={`${poppins.variable}  antialiased w-[100%] h-auto mx-auto`}
+        className={`${poppins.variable}  antialiased w-full h-auto mx-auto flex flex-col items-center`}
       >
-        <ExploreScrollProvider>
-          <ScrollProvider>
-            <TopHeader/>
-            <Header/>
-            {children}
-            <Footer/>
-          </ScrollProvider>
-        </ExploreScrollProvider>
+        <CardProvider>
+          <ExploreScrollProvider>
+            <ScrollProvider>
+              <TopHeader/>
+              {children}
+              <Footer/>
+            </ScrollProvider>
+          </ExploreScrollProvider>
+        </CardProvider>
+        
           
         
         
