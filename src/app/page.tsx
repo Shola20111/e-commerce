@@ -8,10 +8,9 @@ import CategoryBanner from '@/components/modules/CategoryBanner';
 import Explore from '@/components/modules/Explore';
 import NewArival from '@/components/modules/NewArival';
 import CustomerCarePack from '@/components/modules/CustomerCarePack';
-import Header from '@/components/common/Header';
+import Header from '@/components/common/header/Header';
 import { CiHeart } from 'react-icons/ci';
 import { BsCart3 } from 'react-icons/bs';
-import Image from 'next/image';
 
 
 
@@ -23,7 +22,6 @@ export default function Home() {
         <div className="h-[60px] flex gap-[16px] items-center">
           <CiHeart className={`w-[25px] h-[25px]`} />
           <BsCart3 className={`w-[25px] h-[20px]`} />
-          <Image src='/user.png' width={18} height={18} alt='User'/>
         </div>
         
       </div>

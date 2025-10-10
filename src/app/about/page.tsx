@@ -1,7 +1,7 @@
 'use client'
 import AchievementSection from '@/components/common/about/AchievementSection'
 import OurAgents from '@/components/common/about/OurAgents'
-import Header from '@/components/common/Header'
+import Header from '@/components/common/header/Header'
 import CustomerCarePack from '@/components/modules/CustomerCarePack'
 import Image from 'next/image'
 import Link from 'next/link'
