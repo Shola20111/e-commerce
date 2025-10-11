@@ -5,6 +5,7 @@ const CardContext = createContext(null);
  
 export const CardProvider = ({ children }:any) => {
   const [clickedCards, setClickedCards] = useState([]);
+ 
   const [isActive, setIsActive] = useState<number | null>(null);
 
   const toggleCard = (product:any) => {
@@ -16,13 +17,18 @@ export const CardProvider = ({ children }:any) => {
           item.id === product.id ? { ...item, count: item.count + 1 } : item
         );
       }
+
       // add new product
       return [...prev, { ...product, count: 1 }];
     });
   };
 
+  const removeCards = (id:number) => {
+  setClickedCards((prev) => prev.filter((item) => item.id !== id));
+};
+
   return (
-    <CardContext.Provider value = {{ clickedCards, toggleCard, isActive, setIsActive }}>
+    <CardContext.Provider value = {{ clickedCards, toggleCard, removeCards, isActive, setIsActive }}>
       {children}
     </CardContext.Provider>
   );
