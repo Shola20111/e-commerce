@@ -1,28 +1,33 @@
 'use client';
 
+import BestProducts from "@/components/common/BestProducts";
 import Header from "@/components/common/header/Header";
 import UserLogoComp from "@/components/common/header/UserLogoComp";
+import Subheader from "@/components/common/Subheader";
+import JustForYou from "@/components/modules/wish-list/JustForYou";
 import { useCard } from "@/context/CardContext";
 import Image from "next/image";
 import Link from "next/link";
 import { BsCart3 } from "react-icons/bs";
 import { CiHeart } from "react-icons/ci";
 import { FiEye } from "react-icons/fi";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 const WishList = () => {
-  const { clickedCards, isActive, setIsActive }:any = useCard();
+  const { removeCards, clickedCards, isActive, setIsActive }: any = useCard();
 
   return (
     <section className='w-[80%] flex flex-col items-center mb-[60px]'>
-      
+
       <div className='w-full flex items-center gap-[16px] mt-4 pb-2 border-b border-[#e4e0e0] '>
-        <Header/>
+        <Header />
         <div className="h-[60px] flex gap-[16px] items-center">
           <div className="relative">
-            <CiHeart className={`w-[25px] h-[25px]`} />
+            <CiHeart
+              className={`w-[25px] h-[25px]`} />
             <div className="bg-[#DB4444] w-[11px] h-[11px] flex justify-center items-center text-[10px] text-white rounded-full absolute top-[0px] right-0">{clickedCards.length}</div>
           </div>
-          
+
           <BsCart3 className={`w-[25px] h-[20px]`} />
           <UserLogoComp />
         </div>
@@ -32,24 +37,20 @@ const WishList = () => {
           <Link href='/' className='text-gray-400' >Home</Link> /
           <Link href='/wishList' className='text-black'>Wishlist</Link>
         </div>
-        
-        <div className="mt-6 rounded-md">
-      <h2 className="font-bold text-lg mb-4">Wish List {clickedCards.length}</h2>
 
-      {clickedCards.length === 0 ? (
-        <p className="text-gray-500">No product clicked yet.</p>
-      ) : (
-        // <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        //   {clickedCards.map((product:any) => (
-        //     <div key={product.id} className="bg-white p-3 rounded-lg shadow text-center">
-        //       <Image src={product.image} alt={product.name} width={100} height={100} className="mx-auto mb-2" />
-        //       <h4 className="font-semibold text-[14px]">{product.name}</h4>
-        //       <p className="text-sm text-gray-500">Whishlist {product.count} times</p>
-        //     </div>
-        //   ))}
-        // </div>
-        <main
-              // ref={scrollRef}
+        <div className="mt-6 rounded-md">
+          <div className="w-full flex justify-between">
+            <h2 className="font-bold text-lg mb-4">Wish List {clickedCards.length}</h2>
+            <button className="border w-[150px] rounded-[4px] ">
+              Move All To Bag
+            </button>
+          </div>
+
+          {clickedCards.length === 0 ? (
+            <p className="text-gray-500">No product clicked yet.</p>
+          ) : (
+
+            <main
               className="flex overflow-x-auto gap-3 scrollbar-hide scroll-smooth"
             >
               {clickedCards.map((product:any) => (
@@ -61,34 +62,32 @@ const WishList = () => {
                   >
                     <div className="w-[172px] h-[152px] flex justify-center items-center">
                       <Image src={product.image} width={172} height={152} alt={product.name} className="w-[85%] h-[86%]" />
-        
+
                       {isActive === product.id && (
                         <button
-                          // onClick={() => toggleCard(product)} // 👈 trigger duplication on click
                           className="w-full h-[41px] rounded-b-4 bg-[#000] text-[#fff] text-[16px] leading-[24px] font-medium absolute right-0 left-0 bottom-0"
                         >
                           Add to Cart
                         </button>
                       )}
                     </div>
-        
-        
+
+
                     <div className="bg-[#DB4444] w-[55px] h-[26px] rounded-[4px] flex justify-center items-center absolute left-2 top-2">
                       <p className="text-white">{product.discount}</p>
                     </div>
-        
-        
+
+
                     <div className="flex flex-col justify-center items-center gap-2 absolute top-10 right-4">
                       <div className="w-[25px] h-[25px] bg-white flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200">
-                        <CiHeart size={20} />
-                      </div>
-                      <div className="w-[25px] h-[25px] bg-white flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200">
-                        <FiEye size={15} />
+                        <RiDeleteBin6Line
+                          onClick={() => removeCards(product.id)}
+                          size={20} />
                       </div>
                     </div>
                   </div>
-        
-        
+
+
                   <div className="h-auto flex flex-col gap-[8px] mt-2">
                     <h4 className="text-[16px] leading-[24px] font-medium">
                       {product.name}
@@ -99,18 +98,22 @@ const WishList = () => {
                     </div>
                     {/* <StarsComp /> */}
                   </div>
-        
+
                 </section>
               ))}
-        
-            </main>
-      )}
-    </div>
-      </div>
-    </section>  
-    
 
-    
+            </main>
+          )}
+          <div>
+            <div></div>
+            <JustForYou/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
   );
 };
 
