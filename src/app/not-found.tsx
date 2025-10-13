@@ -1,4 +1,5 @@
 import Header from '@/components/common/header/Header'
+import { CartLogo, HeartLogo } from '@/components/common/header/headerTools'
 import UserLogoComp from '@/components/common/header/UserLogoComp'
 import Link from 'next/link'
 import React from 'react'
@@ -12,8 +13,8 @@ export default function NotFound() {
       <div className='w-full flex items-center gap-[16px] mt-4 pb-2 border-b border-[#e4e0e0] '>
         <Header/>
         <div className="h-[60px] flex gap-[16px] items-center">
-          <CiHeart className={`w-[25px] h-[25px]`} />
-          <BsCart3 className={`w-[25px] h-[20px]`} />
+          <HeartLogo/>
+          <CartLogo/>
           <UserLogoComp/>
         </div>
       </div>
