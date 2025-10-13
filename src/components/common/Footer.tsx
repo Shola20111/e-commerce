@@ -1,6 +1,9 @@
+'use client'
 import { Facebook, SendHorizontal } from 'lucide-react'
 import Image from 'next/image'
-import React from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import React, { useState } from 'react'
 import { AiOutlineCopyright } from 'react-icons/ai'
 import { CiInstagram, CiTwitter } from 'react-icons/ci'
 
@@ -8,9 +11,11 @@ import { TfiLinkedin } from 'react-icons/tfi'
 import { TiSocialFacebook } from 'react-icons/ti'
 
 const Footer = () => {
+const pathname = usePathname()
+  // const [activeKey, setActiveKey] = useState(false)
   return (
     <div className='w-full h-auto lg:h-[440px] bg-[#000] flex flex-col justify-between items-center'>
-      <div className='w-[95%] md:w-[90%] lg:w-[80%] h-auto gap-5 lg:h-[236px] flex flex-col md:grid grid-cols-2 lg:flex lg:flex-row justify-between my-auto' >
+      <div className='w-[80%] h-auto gap-5 lg:h-[236px] flex flex-col md:grid grid-cols-2 lg:flex lg:flex-row justify-between my-auto' >
         <div className='w-[217px] h-[188px] flex flex-col gap-3'>
           <h1 className='text-[24px] font-extrabold leading-[24px] tracking-[3%] text-[#fafafa]'>Exclusive</h1>
           <h5 className='leading-[28px] text-[20px] font-medium text-[#fafafa]  '>Subscribe</h5>
@@ -28,10 +33,26 @@ const Footer = () => {
         </div>
         <div className='w-[123px] h-[188px] flex flex-col gap-3'>
           <h5 className='leading-[28px] text-[20px] font-medium text-[#fafafa]  '>Account</h5>
-          <p className='text-[16px] leading-[24px] text-[#fafafa] '>My Account</p>
-          <p className='text-[16px] leading-[24px] text-[#fafafa] '>Login / Register</p>
+          <Link href='/myAccount' >
+            <p className='text-[16px] leading-[24px] text-[#fafafa] '>My Account</p>
+          </Link>
+          
+          
+          <div className='flex'>
+            <Link href='/login' >
+              <span className={`${pathname === '/login' && 'underline'} text-[16px] leading-[24px] text-[#fafafa] `}>Login</span>
+            </Link> 
+            <span className={`${pathname === '/register' && 'underline'} text-[16px] leading-[24px] text-[#fafafa] mr-1`}>/</span> 
+            <Link href='/register'>
+              <span className='text-[16px] leading-[24px] text-[#fafafa] '>Register</span>
+            </Link>
+          </div>
+          
           <p className='text-[16px] leading-[24px] text-[#fafafa] '>Cart</p>
-          <p className='text-[16px] leading-[24px] text-[#fafafa] '>Wishlist</p>
+          <Link href='/wishList' >
+            <p className={`${pathname === '/login' && 'underline'} text-[16px] leading-[24px] text-[#fafafa] `}>Wishlist</p>
+          </Link>
+          
           <p className='text-[16px] leading-[24px] text-[#fafafa] '>Shop</p>
         </div>
         <div className='w-[109px] h-[188px] flex flex-col gap-3'>
@@ -40,7 +61,9 @@ const Footer = () => {
           <p className='text-[16px] leading-[24px] text-[#fafafa] '>Terms of Use
           </p>
           <p className='text-[16px] leading-[24px] text-[#fafafa] '>FAQ</p>
-          <p className='text-[16px] leading-[24px] text-[#fafafa] '>Contact</p>
+          <Link href='/contact' >
+            <p className='text-[16px] leading-[24px] text-[#fafafa] '>Contact</p>
+          </Link>
         </div>
         <div className='w-[198px] h-auto flex flex-col gap-3'>
           <h5 className='leading-[28px] text-[20px] font-medium text-[#fafafa]  '>Download App</h5>

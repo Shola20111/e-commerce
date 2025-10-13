@@ -1,18 +1,12 @@
 'use client';
-
-import BestProducts from "@/components/common/BestProducts";
-import Header from "@/components/common/Header";
-
+import Header from "@/components/common/header/Header";
 import { CartLogo, HeartLogo } from "@/components/common/header/headerTools";
-
-import Subheader from "@/components/common/Subheader";
+import UserLogoComp from "@/components/common/header/UserLogoComp";
 import JustForYou from "@/components/modules/wish-list/JustForYou";
-
+import { useCard } from "@/context/CardContext";
 import Image from "next/image";
 import Link from "next/link";
-import { BsCart3 } from "react-icons/bs";
-import { CiHeart } from "react-icons/ci";
-import { FiEye } from "react-icons/fi";
+
 import { RiDeleteBin6Line } from "react-icons/ri";
 
 const WishList = () => {
@@ -25,10 +19,10 @@ const WishList = () => {
         <Header />
         <div className="h-[60px] flex gap-[16px] items-center">
           <div>
-            <HeartLogo />
+            <HeartLogo/>
           </div>
 
-          <CartLogo />
+          <CartLogo/>
           <UserLogoComp />
         </div>
       </div>
@@ -53,7 +47,7 @@ const WishList = () => {
             <main
               className="flex overflow-x-auto gap-3 scrollbar-hide scroll-smooth"
             >
-              {clickedCards.map((product: any) => (
+              {clickedCards.map((product:any) => (
                 <section key={product.id} className="min-w-[260px] max-w-[270px] h-[350px] flex flex-col">
                   <div
                     onMouseEnter={() => setIsActive(product.id)}
@@ -106,7 +100,7 @@ const WishList = () => {
           )}
           <div>
             <div></div>
-            <JustForYou />
+            <JustForYou/>
           </div>
         </div>
       </div>

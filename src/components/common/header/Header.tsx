@@ -3,10 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import { BsCart3 } from "react-icons/bs";
-import { CiHeart } from "react-icons/ci";
 import { usePathname } from "next/navigation";
-import Navbutton from "./Navbutton";
+import Navbutton from "../Navbutton";
 import SearchBar from "./SearchBar";
 
 const Header = () => {
@@ -19,20 +17,17 @@ const Header = () => {
     { href: "/contact", label: "Contact" },
     { href: "/about", label: "About" },
     { href: "/signUp", label: "Sign Up" },
-    { href: "/login", label: "Login" },
   ];
 
   const [signUp, setSignUp] = useState("");
   return (
-    <div className="px-[10px] md:px-[50px] lg:px-[135px] w-full h-[60px] mt-[20px] md:mt-[40px] pb-[10px] md:pb-[15px] border border-[#e4e0e0] mx-auto flex justify-between items-center">
-      
-      <div className="flex items-center justify-between w-full md:w-[700px] h-full">
-       
-        <div className="flex items-center w-[220px] md:w-[150px] h-full">
-          <Image src="/logo.jpg" width={200} height={20} alt="Logo" />
-        </div>
+    <div className="w-full h-[60px] flex justify-between items-center">
 
-       
+      <div className="flex items-center min-w-[200px] h-full">
+          <Image src="/logo.jpg" width={200} height={20} alt="Logo" />
+      </div>
+      
+      
         <div className="hidden lg:flex  w-full h-full justify-center items-center gap-[40px] text-[18px] md:text-lg">
           {links.map((link) => (
             <Link
@@ -45,8 +40,6 @@ const Header = () => {
             </Link>
           ))}
         </div>
-      </div>
-
       
       <div className="flex items-center gap-4">
         
@@ -54,17 +47,7 @@ const Header = () => {
           <SearchBar />
         </div>
 
-        {
-          signUp !== '/signUp'  &&
-          <div className="flex gap-[16px]">
-          <CiHeart className={`w-[25px] h-[25px]`} />
-          <BsCart3 className={`w-[25px] h-[20px]`} />
-        </div>
-        }
-        
-
-        
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button onClick={() => setMenuOpen(true)}>
             <svg
               className="w-7 h-7"
