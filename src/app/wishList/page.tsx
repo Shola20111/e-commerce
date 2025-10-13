@@ -2,6 +2,7 @@
 
 import BestProducts from "@/components/common/BestProducts";
 import Header from "@/components/common/header/Header";
+import { CartLogo, HeartLogo } from "@/components/common/header/headerTools";
 import UserLogoComp from "@/components/common/header/UserLogoComp";
 import Subheader from "@/components/common/Subheader";
 import JustForYou from "@/components/modules/wish-list/JustForYou";
@@ -22,13 +23,16 @@ const WishList = () => {
       <div className='w-full flex items-center gap-[16px] mt-4 pb-2 border-b border-[#e4e0e0] '>
         <Header />
         <div className="h-[60px] flex gap-[16px] items-center">
-          <div className="relative">
+          {/* <div className="relative">
             <CiHeart
               className={`w-[25px] h-[25px]`} />
             <div className="bg-[#DB4444] w-[11px] h-[11px] flex justify-center items-center text-[10px] text-white rounded-full absolute top-[0px] right-0">{clickedCards.length}</div>
+          </div> */}
+          <div>
+            <HeartLogo/>
           </div>
 
-          <BsCart3 className={`w-[25px] h-[20px]`} />
+          <CartLogo/>
           <UserLogoComp />
         </div>
       </div>
