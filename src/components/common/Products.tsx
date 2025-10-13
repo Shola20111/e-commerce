@@ -5,6 +5,7 @@ import { FiEye } from "react-icons/fi";
 import StarsComp from "./StarsComp";
 import { useScroll } from "@/context/ScrollProvider";
 import { useState } from "react";
+import { useCard } from "@/context/CardContext";
 
 const products = [
   {
@@ -58,41 +59,70 @@ const products = [
 ];
 
 const Products = () => {
+  // const { scrollRef } = useScroll();
+
+  // const [isActive, setIsActive] = useState<number | null>(null)
+
+
+  // return (
+
+  //   <main
+  //     ref={scrollRef}
+  //     className="flex overflow-x-auto gap-3 scrollbar-hide scroll-smooth ">
+  //     {products.map((product) => (
+  //       <section
+  //         key={product.id}
+  //         className="min-w-[260px] max-w-[270px] h-[350px] flex flex-col"
+  //       >
+
+  //         <div
+  //           onMouseEnter={() => setIsActive(product.id)}
+  //           onMouseLeave={() => setIsActive(null)}
+  //           className="w-full h-[250px] flex justify-center items-center rounded-[4px] bg-[#f5f5f5] relative">
+  //           <div className="w-[172px] h-[152px] flex justify-center items-center">
+  //             <Image
+  //               src={product.image}
+  //               width={172}
+  //               height={152}
+  //               alt={product.name}
+  //               className="w-[85%] h-[86%] "
+  //             />
+  //             {
+  //               isActive === product.id &&
+  //               <button className="w-full h-[41px] rounded-b-4 bg-[#000] text-[#fff] text-[16px] leading-[24px] font-medium absolute right-0 left-0 bottom-0">
+  //                 Add to Cart
+  //               </button>
+
+  //             }
+  //           </div>
+
   const { scrollRef } = useScroll();
-
-  const [isActive, setIsActive] = useState<number | null>(null)
-
+  const { toggleCard, isActive, setIsActive }: any = useCard();
 
   return (
-
     <main
       ref={scrollRef}
-      className="flex overflow-x-auto gap-3 scrollbar-hide scroll-smooth ">
+      className="flex overflow-x-auto gap-3 scrollbar-hide scroll-smooth"
+    >
       {products.map((product) => (
-        <section
-          key={product.id}
-          className="min-w-[260px] max-w-[270px] h-[350px] flex flex-col"
-        >
-
+        <section key={product.id} className="min-w-[260px] max-w-[270px] h-[350px] flex flex-col">
           <div
             onMouseEnter={() => setIsActive(product.id)}
             onMouseLeave={() => setIsActive(null)}
-            className="w-full h-[250px] flex justify-center items-center rounded-[4px] bg-[#f5f5f5] relative">
+            onClick={() => toggleCard(product)} // 👈 trigger duplication on click
+            className="w-full h-[250px] flex justify-center items-center rounded-[4px] bg-[#f5f5f5] relative"
+          >
             <div className="w-[172px] h-[152px] flex justify-center items-center">
-              <Image
-                src={product.image}
-                width={172}
-                height={152}
-                alt={product.name}
-                className="w-[85%] h-[86%] "
-              />
-              {
-                isActive === product.id &&
-                <button className="w-full h-[41px] rounded-b-4 bg-[#000] text-[#fff] text-[16px] leading-[24px] font-medium absolute right-0 left-0 bottom-0">
+              <Image src={product.image} width={172} height={152} alt={product.name} className="w-[85%] h-[86%]" />
+
+              {isActive === product.id && (
+                <button
+                  // onClick={() => toggleCard(product)} // 👈 trigger duplication on click
+                  className="w-full h-[41px] rounded-b-4 bg-[#000] text-[#fff] text-[16px] leading-[24px] font-medium absolute right-0 left-0 bottom-0"
+                >
                   Add to Cart
                 </button>
-
-              }
+              )}
             </div>
 
 

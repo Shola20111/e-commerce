@@ -2,7 +2,7 @@ import Header from '@/components/common/header/Header'
 import Image from 'next/image'
 import React from 'react'
 
-const SignUp = () => {
+const Login = () => {
   return (
     <div className='w-full'>
       <div className='w-[80%] mx-auto  '>
@@ -27,7 +27,7 @@ const SignUp = () => {
           
           <div className="mb-6">
             <h1 className="text-2xl sm:text-3xl font-medium text-black tracking-wide leading-tight px-2">
-              Create an account
+              Log in to Exclusive
             </h1>
             <h3 className="text-sm sm:text-base text-black mt-2 px-2">
               Enter your details below
@@ -36,11 +36,7 @@ const SignUp = () => {
 
           
           <form className="w-full flex flex-col gap-4">
-            <input
-              type="text"
-              placeholder="Name"
-              className="border-b border-gray-400 text-black w-full p-2 focus:outline-none"
-            />
+            
             <input
               type="email"
               placeholder="Email or Phone Number"
@@ -54,36 +50,19 @@ const SignUp = () => {
           </form>
 
           
-          <div className="w-full flex flex-col gap-4 mt-8">
-            <button className="w-full h-14 rounded text-base text-white bg-[#DB4444] font-medium">
-              Create Account
-            </button>
-
-            <div className="w-full h-14 flex justify-center items-center gap-2 rounded border border-gray-400">
-              <div className="w-6 h-6 flex justify-center items-center">
-                <Image
-                  src="/icon-google.png"
-                  width={24}
-                  height={24}
-                  alt="Google Icon"
-                  className="w-full h-full"
-                />
-              </div>
-              <span className="text-base text-black">Sign up with Google</span>
-            </div>
-
-            <div className="text-sm sm:text-base text-black flex justify-center items-center gap-2">
-              <span>Already have an account?</span>
-              <button className="text-blue-600 hover:underline">Log in</button>
-            </div>
+          <div className="w-full flex justify-between items-center mt-8">
+            <button className="w-[153px] h-14 rounded text-base text-white bg-[#DB4444] font-medium">
+              Log in
+            </button>          
+              <span className='text-[#DB4444]'>Already have an account?</span>            
           </div>
+
         </section>
       </div>
-    </div>  
-
+    </div>
     
 
   )
 }
 
-export default SignUp
+export default Login

@@ -16,7 +16,7 @@ const cards = [
     id: 2,
     title:"banner",
     callToAction: "Shop Now",
-    image: "/banner.png",
+    image: "/monitor.png",
   },
   {
     id: 3,
