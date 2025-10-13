@@ -3,8 +3,6 @@ import { CartLogo, HeartLogo } from '@/components/common/header/headerTools'
 import UserLogoComp from '@/components/common/header/UserLogoComp'
 import Link from 'next/link'
 import React from 'react'
-import { BsCart3 } from 'react-icons/bs'
-import { CiHeart } from 'react-icons/ci'
 
 export default function NotFound() {
   return (

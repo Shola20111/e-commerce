@@ -18,11 +18,11 @@ export const HeartLogo = () => {
 
 
 export const CartLogo = () => {
-  return(
+  return (
     <div className="cursor-pointer">
       <BsCart3 className={`w-[25px] h-[20px]`} />
     </div>
-    
+
   )
-  
+
 }
