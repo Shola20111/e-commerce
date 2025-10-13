@@ -11,6 +11,7 @@ import CustomerCarePack from '@/components/modules/CustomerCarePack';
 import Header from '@/components/common/header/Header';
 import { CiHeart } from 'react-icons/ci';
 import { BsCart3 } from 'react-icons/bs';
+import { CartLogo, HeartLogo } from '@/components/common/header/headerTools';
 
 
 
@@ -20,8 +21,8 @@ export default function Home() {
       <div className='w-full flex items-center gap-[16px] mt-4 pb-2 border-b border-[#e4e0e0] '>
         <Header/>
         <div className="h-[60px] flex gap-[16px] items-center">
-          <CiHeart className={`w-[25px] h-[25px]`} />
-          <BsCart3 className={`w-[25px] h-[20px]`} />
+          <HeartLogo/>
+          <CartLogo/>
         </div>
         
       </div>
