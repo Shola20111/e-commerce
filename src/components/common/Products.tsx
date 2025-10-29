@@ -110,6 +110,7 @@ const Products = () => {
           <div
             onMouseEnter={() => setIsActive(product.id)}
             onMouseLeave={() => setIsActive(null)}
+            onClick={() => toggleCard(product)} // 👈 trigger duplication on click
             className="w-full h-[250px] flex justify-center items-center rounded-[4px] bg-[#f5f5f5] relative"
           >
             <div className="w-[172px] h-[152px] flex justify-center items-center">
@@ -117,7 +118,6 @@ const Products = () => {
 
               {isActive === product.id && (
                 <button
-                  onClick={() => toggleCard(product)} // 👈 trigger duplication on click
                   className="w-full h-[41px] rounded-b-4 bg-[#000] text-[#fff] text-[16px] leading-[24px] font-medium absolute right-0 left-0 bottom-0"
                 >
                   Add to Cart
