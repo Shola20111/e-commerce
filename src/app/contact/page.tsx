@@ -1,4 +1,5 @@
 import Header from '@/components/common/header/Header'
+import { HeartLogo } from '@/components/common/header/headerTools'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -12,7 +13,7 @@ export default function Contact() {
       <div className='w-full flex items-center gap-[16px] mt-4 pb-2 border-b border-[#e4e0e0] '>
         <Header/>
         <div className="h-[60px] flex gap-[16px] items-center">
-          <CiHeart className={`w-[25px] h-[25px]`} />
+          <HeartLogo/>
           <BsCart3 className={`w-[25px] h-[20px]`} />
           <Image src='/user.png' width={18} height={18} alt='User'/>
         </div>
