@@ -55,7 +55,7 @@ const Cart = () => {
                   {/* Product Info */}
                   <div className="flex items-center w-[260px] pl-4 relative">
                     <Image
-                      src={item.image}
+                      src={item.image!}
                       alt={item.name}
                       width={60}
                       height={60}

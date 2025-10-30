@@ -5,6 +5,16 @@ import React from 'react'
 import { BsCart3 } from 'react-icons/bs'
 import { FiEye } from 'react-icons/fi'
 
+interface CartItem {
+  id: number;
+  name: string;
+  price: number;
+  quantity: number;
+  image?: string;
+}
+
+
+
 const bestSellingList = [
   {
     id: 1,
@@ -63,7 +73,16 @@ export default function JustForYou() {
                 </div>
               </div>
               <div
-                onClick={() => addToCart(item)}
+                onClick={() =>
+                  addToCart({
+                    ...item,
+                    id: String(item.id),
+                    quantity: 1,
+                    count: 1, // ✅ add this line
+                  })
+                }
+
+
                 className="w-full h-[41px] rounded-b-4 bg-[#000] text-[#fff] text-[16px] leading-[24px] font-medium flex justify-center items-center gap-2 absolute right-0 left-0 bottom-0 cursor-pointer"
               >
                 <BsCart3 className={`w-[25px] h-[20px]`} />
