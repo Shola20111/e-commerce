@@ -3,7 +3,6 @@ import Image from "next/image";
 import { CiHeart } from "react-icons/ci";
 import { FiEye } from "react-icons/fi";
 import StarsComp from "./StarsComp";
-import { useScroll } from "@/context/ScrollProvider";
 import { useState } from "react";
 import { useExploreScroll } from "@/context/ExploreScrollProvider";
 
@@ -14,7 +13,7 @@ const products = [
     price: 120,
     oldPrice: 160,
     discount: "-40%",
-    image: "/game.png",
+    image: "/book.png",
   },
   {
     id: 2,
@@ -22,7 +21,7 @@ const products = [
     price: 90,
     oldPrice: 130,
     discount: "-30%",
-    image: "/game.png",
+    image: "/camera-image.png",
   },
   {
     id: 3,
@@ -30,7 +29,7 @@ const products = [
     price: 150,
     oldPrice: 200,
     discount: "-25%",
-    image: "/game.png",
+    image: "/laptop.png",
   },
   {
     id: 4,
@@ -38,7 +37,7 @@ const products = [
     price: 70,
     oldPrice: 100,
     discount: "-30%",
-    image: "/game.png",
+    image: "/cream.png",
   },
   {
     id: 5,

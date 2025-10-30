@@ -1,17 +1,16 @@
 'use client';
-
-import BestProducts from "@/components/common/BestProducts";
 import Header from "@/components/common/header/Header";
 import { CartLogo, HeartLogo } from "@/components/common/header/headerTools";
 import UserLogoComp from "@/components/common/header/UserLogoComp";
-import Subheader from "@/components/common/Subheader";
 import JustForYou from "@/components/modules/wish-list/JustForYou";
 import { useCard } from "@/context/CardContext";
 import Image from "next/image";
 import Link from "next/link";
+<<<<<<< HEAD
 import { BsCart3 } from "react-icons/bs";
-import { CiHeart } from "react-icons/ci";
-import { FiEye } from "react-icons/fi";
+=======
+
+>>>>>>> 3b63d4dd8828d5d2dfb8d36142882989081fd933
 import { RiDeleteBin6Line } from "react-icons/ri";
 
 const WishList = () => {
