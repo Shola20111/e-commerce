@@ -3,8 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import { BsCart3 } from "react-icons/bs";
-import { CiHeart } from "react-icons/ci";
 import { usePathname } from "next/navigation";
 import Navbutton from "../Navbutton";
 import SearchBar from "./SearchBar";

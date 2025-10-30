@@ -47,8 +47,10 @@ const pathname = usePathname()
               <span className='text-[16px] leading-[24px] text-[#fafafa] '>Register</span>
             </Link>
           </div>
+          <Link href="/cart">
+            <p className='text-[16px] leading-[24px] text-[#fafafa] '>Cart</p>
+          </Link>
           
-          <p className='text-[16px] leading-[24px] text-[#fafafa] '>Cart</p>
           <Link href='/wishList' >
             <p className={`${pathname === '/login' && 'underline'} text-[16px] leading-[24px] text-[#fafafa] `}>Wishlist</p>
           </Link>
