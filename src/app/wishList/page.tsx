@@ -6,11 +6,7 @@ import JustForYou from "@/components/modules/wish-list/JustForYou";
 import { useCard } from "@/context/CardContext";
 import Image from "next/image";
 import Link from "next/link";
-<<<<<<< HEAD
 import { BsCart3 } from "react-icons/bs";
-=======
-
->>>>>>> 3b63d4dd8828d5d2dfb8d36142882989081fd933
 import { RiDeleteBin6Line } from "react-icons/ri";
 
 const WishList = () => {
