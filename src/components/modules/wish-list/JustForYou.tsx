@@ -1,4 +1,5 @@
 import StarsComp from '@/components/common/StarsComp'
+import { useCard } from '@/context/CardContext'
 import Image from 'next/image'
 import React from 'react'
 import { BsCart3 } from 'react-icons/bs'
@@ -35,13 +36,12 @@ const bestSellingList = [
   },
 ]
 export default function JustForYou() {
+  const { addToCart } = useCard();
   return (
     <section>
-      <div>
-        <div>
-          <div className='w-4 h-6 bg-[red]'></div>
-        </div>
-        <button className='w-20 border'>See All</button>
+      <div className='mb-10 flex gap-1 '>
+        <div className='w-4 h-8 rounded-[4px] bg-[#DB4444]'></div>
+        <button className='w-25 rounded-[4px] '>Just For You</button>
       </div>
       <div className='w-full h-auto flex flex-col gap-3 overflow-x-auto sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
         {bestSellingList.map((item) => (
@@ -63,11 +63,13 @@ export default function JustForYou() {
                 </div>
               </div>
               <div
-                // onClick={() => toggleCard(product)} // 👈 trigger duplication on click
-                className="w-full h-[41px] rounded-b-4 bg-[#000] text-[#fff] text-[16px] leading-[24px] font-medium flex justify-center items-center gap-2 absolute right-0 left-0 bottom-0"
+                onClick={() => addToCart(item)}
+                className="w-full h-[41px] rounded-b-4 bg-[#000] text-[#fff] text-[16px] leading-[24px] font-medium flex justify-center items-center gap-2 absolute right-0 left-0 bottom-0 cursor-pointer"
               >
                 <BsCart3 className={`w-[25px] h-[20px]`} />
-                <div>Add to Cart</div>
+                <div>
+                  Add to Cart
+                </div>
               </div>
             </div>
 
