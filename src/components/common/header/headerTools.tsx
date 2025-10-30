@@ -1,5 +1,6 @@
 'use client'
 import { useCard } from "@/context/CardContext"
+import Link from "next/link"
 import { BsCart3 } from "react-icons/bs"
 import { CiHeart } from "react-icons/ci"
 
@@ -9,8 +10,11 @@ export const HeartLogo = () => {
   const { clickedCards }: any = useCard()
   return (
     <div className="relative cursor-pointer">
-      <CiHeart
+      <Link href="/wishList">
+        <CiHeart
         className={`w-[25px] h-[25px]`} />
+      </Link>
+      
       <div className="bg-[#DB4444] w-[11px] h-[11px] flex justify-center items-center text-[10px] text-white rounded-full absolute top-[0px] right-0">{clickedCards.length}</div>
     </div>
   )
@@ -18,11 +22,14 @@ export const HeartLogo = () => {
 
 
 export const CartLogo = () => {
-  return(
+  return (
     <div className="cursor-pointer">
-      <BsCart3 className={`w-[25px] h-[20px]`} />
+      <Link href="/cart">
+        <BsCart3 className={`w-[25px] h-[20px]`} />
+      </Link>
+      
     </div>
-    
+
   )
-  
+
 }
