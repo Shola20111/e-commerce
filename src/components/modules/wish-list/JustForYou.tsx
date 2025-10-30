@@ -5,7 +5,7 @@ import React from 'react'
 import { BsCart3 } from 'react-icons/bs'
 import { FiEye } from 'react-icons/fi'
 
-const bestSellingList=[
+const bestSellingList = [
   {
     id: 1,
     name: "The north coat",
@@ -49,13 +49,13 @@ export default function JustForYou() {
             key={item.id}
             className='w-[340px] sm:w-full md:w-full h-[350px] flex flex-col justify-between items-start mx-auto rounded-[6px]'
           >
-            
+
             <div className='w-full h-[250px] bg-[#F5F5F5] flex justify-center items-center rounded-[4px] relative'>
-              <Image 
+              <Image
                 src={item.image}
-                width={140} 
-                height={140} 
-                alt='image' 
+                width={140}
+                height={140}
+                alt='image'
               />
               <div className="flex flex-col justify-center items-center gap-2 absolute top-10 right-4">
                 <div className="w-[25px] h-[25px] bg-white flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200">
@@ -88,7 +88,7 @@ export default function JustForYou() {
         ))}
       </div>
     </section>
-    
+
 
   )
 }

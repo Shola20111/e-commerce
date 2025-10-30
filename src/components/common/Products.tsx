@@ -80,7 +80,6 @@ const Products = () => {
 
               {isActive === product.id && (
                 <button
-                  onClick={() => addToCart(product)}
                   className="w-full h-[41px] rounded-b-4 bg-[#000] text-[#fff] text-[16px] leading-[24px] font-medium absolute right-0 left-0 bottom-0"
                 >
                   Add to Cart

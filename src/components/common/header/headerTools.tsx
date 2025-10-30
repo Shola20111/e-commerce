@@ -22,14 +22,14 @@ export const HeartLogo = () => {
 
 
 export const CartLogo = () => {
-  return(
+  return (
     <div className="cursor-pointer">
       <Link href="/cart">
         <BsCart3 className={`w-[25px] h-[20px]`} />
       </Link>
       
     </div>
-    
+
   )
-  
+
 }
