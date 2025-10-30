@@ -4,7 +4,6 @@ import { CiHeart } from "react-icons/ci";
 import { FiEye } from "react-icons/fi";
 import StarsComp from "./StarsComp";
 import { useScroll } from "@/context/ScrollProvider";
-import { useState } from "react";
 import { useCard } from "@/context/CardContext";
 
 const products = [

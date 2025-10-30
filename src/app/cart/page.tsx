@@ -1,7 +1,6 @@
 'use client';
 import { useCard } from "@/context/CardContext";
 import Image from "next/image";
-import { IoTrashOutline } from "react-icons/io5";
 import Link from 'next/link'
 import { CartLogo, HeartLogo } from "@/components/common/header/headerTools";
 import UserLogoComp from "@/components/common/header/UserLogoComp";
