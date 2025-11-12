@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { CiHeart } from "react-icons/ci";
 import { FiEye } from "react-icons/fi";
-import StarsComp from "./StarsComp";
+import StarsComp from "../common/StarsComp";
 import { useState } from "react";
 import { useExploreScroll } from "@/context/ExploreScrollProvider";
 
