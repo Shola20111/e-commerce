@@ -51,7 +51,7 @@ const TopHeader = () => {
 							{
 								open &&
 							
-                <div  className='flex flex-col justify-start text-[20px] bg-[#fff] text-[#000] h-auto w-[200px] gap-3 p-2 absolute top-[48px] left-[-100px] ' style={{boxShadow:'0 0 10px rgba(0, 0, 0, 0.5'}}>
+                <div  className='flex flex-col justify-start text-[20px] bg-[#fff] text-[#000] h-auto w-[200px] gap-3 p-2 absolute top-[48px] left-[-100px] z-50' style={{boxShadow:'0 0 10px rgba(0, 0, 0, 0.5)'}}>
                   {["English", "Arabic", "French"].map((menu) => (
                     <button
                       key={menu}

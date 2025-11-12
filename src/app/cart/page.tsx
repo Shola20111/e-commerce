@@ -143,9 +143,12 @@ const Cart = () => {
                   <p>Total:</p>
                   <p>${total.toFixed(2)}</p>
                 </div>
-                <button className="mt-4 mx-auto w-[200px] bg-[#DB4444] text-white py-2 rounded-md font-semibold hover:bg-[#b63535]">
-                  Process to Checkout
-                </button>
+                <Link href='/checkout'>
+                  <button className="mt-4 mx-auto w-[200px] bg-[#DB4444] text-white py-2 rounded-md font-semibold hover:bg-[#b63535]">
+                    Process to Checkout
+                  </button>
+                </Link>
+                
               </div>
             </div>
           )}

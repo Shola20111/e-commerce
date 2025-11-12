@@ -9,8 +9,7 @@ import Explore from '@/components/modules/Explore';
 import NewArival from '@/components/modules/NewArival';
 import CustomerCarePack from '@/components/modules/CustomerCarePack';
 import Header from '@/components/common/header/Header';
-import { CiHeart } from 'react-icons/ci';
-import { BsCart3 } from 'react-icons/bs';
+
 import { CartLogo, HeartLogo } from '@/components/common/header/headerTools';
 
 
