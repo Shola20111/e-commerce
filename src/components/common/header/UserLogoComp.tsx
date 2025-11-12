@@ -63,6 +63,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 import { CiUser } from 'react-icons/ci';
 
@@ -96,10 +97,10 @@ const UserLogoComp: React.FC = () => {
           onClick={() => setOnRegister(!onRegister)}
           className="w-[160px] h-[150px] bg-[#9e9999] text-white absolute right-0 top-5 p-2 flex flex-col justify-between"
         >
-          <div className="flex gap-2">
+          <Link href='/myAccount' className="flex gap-2">
             <CiUser />
             <p className="text-[12px]">Manage My Account</p>
-          </div>
+          </Link>
 
           <div className="flex gap-2">
             <Image src="/icon-mallbag.png" width={18} height={18} alt="User" />

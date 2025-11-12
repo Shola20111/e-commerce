@@ -33,23 +33,23 @@ const Cart = () => {
         </div>
 
           {/* Header Row */}
-          <div className="hidden md:flex items-center justify-between w-full h-[72px] text-[24px] font-semibold border border-gray-400 uppercase">
+          <div className="hidden md:flex items-center justify-between w-full h-[72px] text-[24px] font-semibold shadow px-4 uppercase">
             <p className="w-[260px] ">Products</p>
-            <p className="md:w-40 border flex justify-center items-center">Price</p>
-            <p className="md:w-40 border flex justify-center items-center">Quantity</p>
-            <p className="md:w-40 border flex justify-center items-center">Subtotal</p>
+            <p className="md:w-40  flex justify-center items-center">Price</p>
+            <p className="md:w-40  flex justify-center items-center">Quantity</p>
+            <p className="md:w-40  flex justify-center items-center">Subtotal</p>
           </div>
 
           {/* Cart Items */}
-          <div>
+          <div className="flex flex-col gap-8">
             {cartItems.length === 0 ? (
               <p className="text-gray-500 text-center mt-10">Your cart is empty.</p>
             ) : (
               cartItems.map((item) => (
                 <div
                   key={item.id}
-                  className="grid grid-cols-1 md:flex items-center justify-between w-full h-[102px] text-[15px] rounded-[4px] "
-                  style={{ boxShadow: "0 0px 5px rgba(0,0,0,0.1)" }}
+                  className="grid grid-cols-1 md:flex items-center justify-between w-full h-[102px] text-[15px] rounded-[4px] shadow  "
+                  
 
                 >
                   {/* Product Info */}
@@ -143,9 +143,12 @@ const Cart = () => {
                   <p>Total:</p>
                   <p>${total.toFixed(2)}</p>
                 </div>
-                <button className="mt-4 mx-auto w-[200px] bg-[#DB4444] text-white py-2 rounded-md font-semibold hover:bg-[#b63535]">
-                  Process to Checkout
-                </button>
+                <Link href='/checkout'>
+                  <button className="mt-4 mx-auto w-[200px] bg-[#DB4444] text-white py-2 rounded-md font-semibold hover:bg-[#b63535]">
+                    Process to Checkout
+                  </button>
+                </Link>
+                
               </div>
             </div>
           )}

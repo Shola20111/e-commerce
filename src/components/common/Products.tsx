@@ -205,17 +205,26 @@ const Products = () => {
   return (
     <main
       ref={scrollRef}
-      className="flex overflow-x-auto gap-3 scrollbar-hide scroll-smooth"
+      className="
+    flex 
+    overflow-x-auto 
+    overflow-y-hidden
+    gap-3 
+    scroll-smooth 
+    scrollbar-hide 
+    w-full 
+    max-w-full
+  "
     >
       {products.map((product) => (
         <section
           key={product.id}
-          className="min-w-[260px] max-w-[270px] h-[350px] flex flex-col"
+          className="min-w-[260px] max-w-[270px] h-[350px] flex flex-col shrink-0"
         >
           <div
             onMouseEnter={() => setIsActive(product.id)}
             onMouseLeave={() => setIsActive(null)}
-            onClick={() => toggleCard({ ...product, count: 1 })} // ✅ pass count
+            onClick={() => toggleCard({ ...product, count: 1 })}
             className="w-full h-[250px] flex justify-center items-center rounded-[4px] bg-[#f5f5f5] relative"
           >
             <div className="w-[172px] h-[152px] flex justify-center items-center">
@@ -230,7 +239,7 @@ const Products = () => {
               {isActive === product.id && (
                 <button
                   onClick={(e) => {
-                    e.stopPropagation(); // prevent toggleCard when clicking button
+                    e.stopPropagation();
                     addToCart(product);
                   }}
                   className="w-full h-[41px] bg-[#000] text-[#fff] text-[16px] leading-[24px] font-medium absolute right-0 left-0 bottom-0 rounded-b-[4px]"
