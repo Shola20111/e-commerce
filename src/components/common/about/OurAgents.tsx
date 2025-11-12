@@ -98,7 +98,9 @@ const OurAgents = () => {
   ]
 
   const [current, setCurrent] = useState(0)
-  const totalSlides = Math.ceil(cards.length / 3) // 2 slides (6 cards / 3)
+
+  const cardsPerSlide = window.innerWidth < 640 ? 1 : window.innerWidth < 1024 ? 2 : 3;
+  const totalSlides = Math.ceil(cards.length / cardsPerSlide);
 
   // Auto-slide every 10 seconds
   useEffect(() => {
@@ -108,69 +110,69 @@ const OurAgents = () => {
     return () => clearInterval(timer)
   }, [totalSlides])
 
+  
+
+
   return (
     <div className="w-full h-auto mx-auto">
-      {/* Slide container */}
-      <div className="overflow-hidden">
+  {/* Slide container */}
+  <div className="overflow-hidden">
+    <div 
+      className="flex transition-transform duration-700"
+      style={{ transform: `translateX(-${current * 100}%)` }}
+    >
+      {Array.from({ length: totalSlides }).map((_, slideIndex) => (
         <div 
-          className="flex transition-transform duration-700"
-          style={{ transform: `translateX(-${current * 100}%)` }}
+          key={slideIndex} 
+          className="flex min-w-full gap-4 justify-center flex-wrap"
         >
-          
-          {Array.from({ length: totalSlides }).map((_, slideIndex) => (
-            <div key={slideIndex} className="flex min-w-full gap-4 justify-center">
-              {cards.slice(slideIndex * 3, slideIndex * 3 + 3).map((card, index) => (
-                <div 
-                  key={index} 
-                  className="flex flex-col items-center bg-white rounded-2xl overflow-hidden gap-2"
-                >
-                  
-                  <div className='rounded-[4px] '>
-                    <img 
+          {cards
+            .slice(slideIndex * cardsPerSlide, slideIndex * cardsPerSlide + cardsPerSlide)
+            .map((card, index) => (
+              <div 
+                key={index} 
+                className="flex flex-col items-center bg-white rounded-2xl overflow-hidden gap-2
+                           w-[90%] sm:w-[45%] lg:w-[30%] transition-transform"
+              >
+                {/* Image */}
+                <div className="rounded-[4px] w-full">
+                  <img 
                     src={card.img} 
                     alt={card.title} 
-                    className="max-w-[370px] h-[400px] rounded-[4px] "
+                    className="w-full h-[400px] object-cover rounded-[4px]"
                   />
-                  </div>
-                  
-
-                  
-                  <div className='w-full flex flex-col justify- items-start'>
-                    <h2 className="text-lg font-bold mt-2">{card.title}</h2>
-
-                    
-                    <p className="text-sm text-gray-600 text-center">
-                      {card.text}
-                    </p>
-
-                  
-                    <div className="flex items-start w-full  py-3 gap-3">
-                      <FaTwitter className=" text-xl cursor-pointer hover:scale-110 transition" />
-                      <FaInstagram className=" text-xl cursor-pointer hover:scale-110 transition" />
-                      <FaFacebook className=" text-xl cursor-pointer hover:scale-110 transition" />
-                    </div>
-                  </div>
-                  
                 </div>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
 
-      {/* Radio / Dots */}
-      <div className="flex justify-center mt-4 space-x-2">
-        {Array.from({ length: totalSlides }).map((_, index) => (
-          <button
-            key={index}
-            className={`w-3 h-3 rounded-full ${
-              current === index ? 'bg-blue-600' : 'bg-gray-400'
-            }`}
-            onClick={() => setCurrent(index)}
-          ></button>
-        ))}
-      </div>
+                {/* Content */}
+                <div className="w-full flex flex-col items-start px-2">
+                  <h2 className="text-lg font-bold mt-2">{card.title}</h2>
+                  <p className="text-sm text-gray-600 text-center">{card.text}</p>
+
+                  <div className="flex items-start w-full py-3 gap-3">
+                    <FaTwitter className="text-xl cursor-pointer hover:scale-110 transition" />
+                    <FaInstagram className="text-xl cursor-pointer hover:scale-110 transition" />
+                    <FaFacebook className="text-xl cursor-pointer hover:scale-110 transition" />
+                  </div>
+                </div>
+              </div>
+            ))}
+        </div>
+      ))}
     </div>
+  </div>
+
+  {/* Dots */}
+  <div className="flex justify-center mt-4 space-x-2">
+    {Array.from({ length: totalSlides }).map((_, index) => (
+      <button
+        key={index}
+        className={`w-3 h-3 rounded-full ${current === index ? 'bg-blue-600' : 'bg-gray-400'}`}
+        onClick={() => setCurrent(index)}
+      ></button>
+    ))}
+  </div>
+</div>
+
 
   )
 }

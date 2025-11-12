@@ -53,9 +53,9 @@ export default function ToGoComp() {
   }, []);
 
   const Column = ({ label, value }: { label: string; value: number }) => (
-    <div className="flex flex-col items-center justify-center  w-[60px] h-[60px] bg-white rounded-full">
+    <div className="flex flex-col items-center justify-center w-[50px] h-[50px] md:w-[60px] md:h-[60px]  bg-white rounded-full">
       <span className="text-xs font-medium text-gray-600">{label}</span>
-      <span className="text-xlg  font-extrabold text-gray-900">
+      <span className="text-xl  font-extrabold text-gray-900">
         {String(value).padStart(2, "0")}
       </span>
     </div>
@@ -64,11 +64,11 @@ export default function ToGoComp() {
   return (
     <div className="flex items-center justify-center">
       <Column label="Days" value={timeLeft.days} />
-      <span className="mx-2 text-2xl font-bold">:</span>
+      <span className="mx-1 md:mx-2 text-xl md:text-2xl font-bold">:</span>
       <Column label="Hours" value={timeLeft.hours} />
-      <span className="mx-2 text-2xl font-bold">:</span>
+      <span className="mx-1 md:mx-2  text-xl md:text-2xl font-bold">:</span>
       <Column label="Minutes" value={timeLeft.minutes} />
-      <span className="mx-2 text-2xl font-bold">:</span>
+      <span className="mx-1 md:mx-2  text-xl md:text-2xl font-bold">:</span>
       <Column label="Seconds" value={timeLeft.seconds} />
     </div>
   );

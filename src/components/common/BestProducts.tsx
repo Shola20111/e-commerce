@@ -40,7 +40,7 @@ export default function BestProducts() {
   {bestSellingList.map((item) => (
     <div
       key={item.id}
-      className='w-[340px] sm:w-full md:w-full h-[350px] flex flex-col justify-between items-start mx-auto rounded-[6px]'
+      className='w-[300px] sm:w-full md:w-full h-[350px] flex flex-col justify-between items-start mx-auto rounded-[6px]'
     >
       
       <div className='w-full h-[250px] bg-[#F5F5F5] flex justify-center items-center rounded-[4px] relative'>
